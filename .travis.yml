@@ -1,0 +1,15 @@
+language: node_js
+node_js: 
+    - "node"
+script:
+    - npm update
+    - npm test
+    - node_modules/.bin/jshint src
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github-token: $Token
+    keep-history: true
+    on:
+      branch: master
+
